@@ -13,9 +13,14 @@
 
 <body>
     <div id="app">
-        {{msg}}
+        {{ myInfo.name }} <br>
+        <p>
+            Get the source code at
+            <a :href="myInfo.gituhubLink">Github Link</a>
+        </p>
+        <br>
+        {{myInfo.rawHmtl}}
     </div>
-
 
 
 
