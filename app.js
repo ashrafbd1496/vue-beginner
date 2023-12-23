@@ -1,15 +1,22 @@
-const { createApp, ref } = Vue;
-
-createApp({
-  setup() {
-    const myInfo = ref({
-      name: "Ashrf Uddin",
-      gituhubLink: "https://github.com/ashrafbd1496/vue-beginner",
-      rawHmtl: '<a href="https://github.com/ashrafbd1496/vue-beginner"></a>',
-    });
-
+var app = Vue.createApp({
+  data() {
     return {
-      myInfo,
+      count: 0,
     };
   },
-}).mount("#app");
+
+  methods: {
+    getCurrentTime() {
+      let ct = new Date();
+      return new Date();
+    },
+
+    increase() {
+      this.count++;
+    },
+    decrease() {
+      this.count--;
+    },
+  },
+});
+app.mount("#app");

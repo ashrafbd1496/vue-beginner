@@ -13,13 +13,10 @@
 
 <body>
     <div id="app">
-        {{ myInfo.name }} <br>
-        <p>
-            Get the source code at
-            <a :href="myInfo.gituhubLink">Github Link</a>
-        </p>
-        <br>
-        {{myInfo.rawHmtl}}
+        <h2>Time: {{getCurrentTime()}}</h2>
+        <h2>Counter: {{count}}</h2>
+        <button @click="increase">Increase</button>
+        <button @click="decrease">Decrease</button>
     </div>
 
 
