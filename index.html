@@ -15,8 +15,12 @@
     <div id="app">
         <h2>Time: {{getCurrentTime()}}</h2>
         <h2>Counter: {{count}}</h2>
-        <button @click="increase">Increase</button>
-        <button @click="decrease">Decrease</button>
+        <button @click="increase($event,2)">Increase 2</button>
+        <button @click="decrease(3)">Decrease 3</button>
+        <br>
+        <hr>
+        <button @click="catchEvent">Catch Event</button>
+
     </div>
 
 

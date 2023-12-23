@@ -11,11 +11,17 @@ var app = Vue.createApp({
       return new Date();
     },
 
-    increase() {
-      this.count++;
+    increase(evt, amount) {
+      this.count = this.count + amount;
+      console.log(evt);
     },
-    decrease() {
-      this.count--;
+    decrease(amount) {
+      this.count = this.count - amount;
+    },
+
+    //catch or get event in vue
+    catchEvent(ev) {
+      console.log(ev);
     },
   },
 });
