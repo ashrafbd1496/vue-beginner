@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#edit,
+#delete {
+  width: 25px;
+  height: auto;
+}
