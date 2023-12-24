@@ -1,27 +1,28 @@
 var app = Vue.createApp({
   data() {
     return {
-      count: 0,
+      name: "",
     };
   },
 
   methods: {
-    getCurrentTime() {
-      let ct = new Date();
-      return new Date();
+    handleKeyup(e) {
+      this.name = e.target.value;
+    },
+    handleFormSubmit(e) {
+      //e.preventDefault();
+      console.log(e);
     },
 
-    increase(evt, amount) {
-      this.count = this.count + amount;
-      console.log(evt);
-    },
-    decrease(amount) {
-      this.count = this.count - amount;
+    handleCardClick(e) {
+      console.log(e);
+      console.log("Card Clicked");
     },
 
-    //catch or get event in vue
-    catchEvent(ev) {
-      console.log(ev);
+    handleViewClick(e) {
+      console.log(e);
+      //e.stopPropagation();
+      console.log("View Clicked");
     },
   },
 });

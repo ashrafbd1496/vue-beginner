@@ -13,13 +13,20 @@
 
 <body>
     <div id="app">
-        <h2>Time: {{getCurrentTime()}}</h2>
-        <h2>Counter: {{count}}</h2>
-        <button @click="increase($event,2)">Increase 2</button>
-        <button @click="decrease(3)">Decrease 3</button>
-        <br>
-        <hr>
-        <button @click="catchEvent">Catch Event</button>
+        <form @submit.prevent="handleFormSubmit">
+            <h3>Enter your name</h3>
+            <input type="text" @keyup="handleKeyup" />
+            <p>Welcome {{name}}!</p>
+            <button type="submit">Submit</button>
+        </form>
+
+        <hr><br>
+        <!-- we can use mouse click event modifier like click.right and
+        click.middle as click.left -->
+        <div class="card" @click.left = "handleCardClick">
+            <!-- has stopped event propagation using stop event modifier -->
+            <button @click.stop = "handleViewClick">View</button>
+        </div>
 
     </div>
 
