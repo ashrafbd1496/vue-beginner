@@ -20,13 +20,22 @@
         <h1 class="text-4xl py-2">{{heading}}</h1>
         <hr><br>
         <form @submit.prevent="addItem">
-            <input v-model="newItem" class="w-80 border p-2" type="text" placeholder="Enter New Item">
+            <input v-model="newItem" class="w-full border p-2 mr-4" type="text"
+                placeholder="Enter New Item then add price">
+
             <br><br>
         </form>
-        <ul class="list-group w-80">
-            <li class="list-group-item border p-2" v-for="item in items" :key="item.name">
-                {{ item.name }} - {{ item.price }}
+        <ul class="list-group w-90">
+            <li class="list-group-item border p-2" v-for="(item,index) in items" :key="item.name">
+
+                {{ item.name + " - Price " }} <input class="inline-block" type="number" v-model="item.price">{{'- Tk '}}
+                <button class="text-white ml-2 mb-2float-right bg-red-500 p-1 px-2 rounded"
+                    @click="removeItem(index)">Remove Item</button>
+
             </li>
+            <br>
+            <li>{{'Total: '+ total.toFixed(2)+ ' Tk'}}</li>
+
         </ul>
     </div>
 
