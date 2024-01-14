@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Vue Upvote</title>
+  <!-- Import Styles -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <script src="tailwind.js"></script>
+  <!-- Import Vue.js -->
+  <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="nav-bar"></div>
+    <div>
+      <div>
+        <a href="" target="_self">
+          <img src="/assets/img/upvote.png"
+            class="mx-auto border-none hover:scale() w-32 sm:w-32 md:w-32 lg:w-32 logo transform transition-transform hover:scale-110"
+            alt="Vite logo" />
+
+        </a>
+        <h2 class="text-center">Upvote</h2>
+      </div>
+      <div class="p-5" v-for="submission in sortedSubmissions" :key="submission.id">
+        <!--Card 1-->
+        <div
+          class="flex w-full h-45 lg:max-w-full lg:flex border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r">
+          <div
+            class="w-1/4 h-30 lg:h-auto lg:w-48 bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            :style="{ backgroundImage: 'url(' + submission.submissionImage + ')' }" title="Mountain"></div>
+          <div class="w-1/2 p-4 flex flex-col text-left justify-between leading-normal">
+            <div class="">
+              <div class="text-gray-900 font-bold text-xl mb-2">
+                {{ submission.title }}
+              </div>
+              <p class="text-gray-700 text-base">
+                {{ submission.description }}
+              </p>
+            </div>
+            <div class="flex items-center">
+              <p class="text-sm">Submitted by: </p>
+              <img class="w-16 h-16 rounded-full" :src="submission.avatar" alt="Avatar of Submiter" />
+            </div>
+          </div>
+          <div class="w-1/4 vote-icon flex">
+            <div class="text-2xl font-bold flex items-center justify-center">
+              <button class="p-2 border-gray-500 rounded-full hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                </svg>
+              </button>
+
+              <div class="upvote-number">{{ submission.votes }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- Import App -->
+  <script src="./main.js"></script>
+  <script src="./Seed.js"></script>
+
+  <!-- Mount App -->
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
+</body>
+
+</html>

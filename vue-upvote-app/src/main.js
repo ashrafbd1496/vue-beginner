@@ -1,8 +1,7 @@
-import { createApp } from 'vue'
-import './style.css'
-import './assets/css/upvote.css'
-import './assets/js/upvote.js'
-import './assets/js/tailwind.js'
-import App from './App.vue'
+import { createApp } from "vue";
+import { Seed } from "/src/Seed.js";
+import App from "./App.vue";
 
-createApp(App).mount('#app')
+const app = createApp({
+  data() {},
+});
